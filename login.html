@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+
+
+    <link rel="stylesheet" href="login.css">
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- fontAweosum -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- googleFonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
+
+</head>
+<body>
+
+
+
+    <div class=" container login-box">
+        <h3>LOGIN</h3>
+        <hr>
+        <form autocomplete="off" class="form-group" id="login-form">
+            <label for="">Email</label>
+            <input type="email" id="login-email" class="form-control" required><br>
+            <label for="">Password</label><br>
+            <input type="password" id="login-password" class="form-control" required><br>
+            <button type="submit" class="btn btn-success btn-block">LOGIN</button>
+            <br>
+            <div class="container error" id="loginError"></div>
+        </form>
+    </div>
+
+    <script type="module">
+
+
+        // // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        
+        import { getAuth } from "firebase/auth";
+        import { getFirestore } from "firebase/firestore";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+        
+
+
+                // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyCExj-hECPyeSonfpHKau_Pd2uPa-mVTzE",
+        authDomain: "petiprojketnizadatak.firebaseapp.com",
+        projectId: "petiprojketnizadatak",
+        storageBucket: "petiprojketnizadatak.appspot.com",
+        messagingSenderId: "651743341207",
+        appId: "1:651743341207:web:6a5bc7589011b2694e57d2",
+        measurementId: "G-TSQNYQXNRG"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    </script>
+
+    <script src="login.js"></script>
+    
+</body>
+</html>
